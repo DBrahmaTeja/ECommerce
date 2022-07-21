@@ -47,7 +47,6 @@ const CardGrid = () => {
   }
   function removeItem(item) {
     if (cartItems[item.id].quantity > 1) {
-      console.log("quant 1");
       setState({
         ...state,
         cartItems: {
@@ -59,7 +58,6 @@ const CardGrid = () => {
         }
       });
     } else {
-      console.log("quant less");
       const obj = cartItems;
       delete obj[item.id];
       setState({ ...state, cartItems: obj });
