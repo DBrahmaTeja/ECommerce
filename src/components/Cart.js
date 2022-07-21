@@ -71,21 +71,20 @@ export default function Cart({ setcartstat }) {
         </button>
       </div>
       <div className="cart-items">
-        {Object.entries(state.cartItems).map(([key, item]) => (
+        {Object.entries(cartItems).map(([key, item]) => (
           <div key={item.id} className="cart-item">
-             <div className="cart-item-title">{item.name}</div>
+            <div className="cart-item-title">{item.name}</div>
             <img alt={item.name} src={item.poster} />
-            <div >
-             
-              <div >
+            <div>
+              <div>
                 <span>₹{item.price}</span>
                 <div>
-                <AddRemoveButton
-                  item={item}
-                  cartItems={cartItems}
-                  addItem={() => addItem(item)}
-                  removeItem={() => removeItem(item)}
-                />
+                  <AddRemoveButton
+                    item={item}
+                    cartItems={cartItems}
+                    addItem={() => addItem(item)}
+                    removeItem={() => removeItem(item)}
+                  />
                 </div>
                 <div>
                   Price: {item.quantity}* ₹{item.price}= ₹
